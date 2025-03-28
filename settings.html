@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - Admin Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-light">
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <div class="sidebar" id="sidebar">
+            <div class="brand-logo p-4">
+                <h4 class="mb-0 fw-bold">Looker</h4>
+            </div>
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">
+                        <i class="bi bi-house-door"></i>
+                        <span>Overview</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="wallet.html">
+                        <i class="bi bi-wallet2"></i>
+                        <span>Wallet</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="transactions.html">
+                        <i class="bi bi-arrow-left-right"></i>
+                        <span>Transactions</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="settings.html">
+                        <i class="bi bi-gear"></i>
+                        <span>Settings</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Top Navigation -->
+            <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
+                <div class="container-fluid px-4">
+                    <button class="btn" id="sidebar-toggle">
+                        <i class="bi bi-list fs-4"></i>
+                    </button>
+                    <div class="d-flex align-items-center gap-3">
+                        <button class="btn btn-light rounded-circle">
+                            <i class="bi bi-bell"></i>
+                        </button>
+                        <button class="btn btn-light rounded-circle">
+                            <i class="bi bi-person"></i>
+                        </button>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Settings Content -->
+            <div class="container-fluid px-4 py-4">
+                <div class="row">
+                    <div class="col-12 col-lg-3 mb-4">
+                        <!-- Settings Navigation -->
+                        <div class="card">
+                            <div class="card-body p-4">
+                                <div class="nav flex-column nav-pills">
+                                    <button class="nav-link active text-start mb-2" data-bs-toggle="pill" data-bs-target="#profile">
+                                        <i class="bi bi-person me-2"></i>
+                                        Profile Settings
+                                    </button>
+                                    <button class="nav-link text-start mb-2" data-bs-toggle="pill" data-bs-target="#security">
+                                        <i class="bi bi-shield-lock me-2"></i>
+                                        Security
+                                    </button>
+                                    <button class="nav-link text-start mb-2" data-bs-toggle="pill" data-bs-target="#notifications">
+                                        <i class="bi bi-bell me-2"></i>
+                                        Notifications
+                                    </button>
+                                    <button class="nav-link text-start mb-2" data-bs-toggle="pill" data-bs-target="#payment">
+                                        <i class="bi bi-credit-card me-2"></i>
+                                        Payment Methods
+                                    </button>
+                                    <button class="nav-link text-start" data-bs-toggle="pill" data-bs-target="#privacy">
+                                        <i class="bi bi-lock me-2"></i>
+                                        Privacy
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-12 col-lg-9">
+                        <!-- Settings Content -->
+                        <div class="tab-content">
+                            <!-- Profile Settings -->
+                            <div class="tab-pane fade show active" id="profile">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title mb-4">Profile Settings</h5>
+                                        <div class="d-flex align-items-center mb-4">
+                                            <div class="position-relative">
+                                                <img src="https://via.placeholder.com/100" alt="Profile" class="rounded-circle" width="100" height="100">
+                                                <button class="btn btn-primary btn-sm position-absolute bottom-0 end-0 rounded-circle">
+                                                    <i class="bi bi-pencil"></i>
+                                                </button>
+                                            </div>
+                                            <div class="ms-4">
+                                                <h6 class="mb-1">Upload Picture</h6>
+                                                <p class="text-muted small mb-0">JPG, GIF or PNG. Max size of 800K</p>
+                                            </div>
+                                        </div>
+                                        <form>
+                                            <div class="row g-3">
+                                                <div class="col-md-6">
+                                                    <label class="form-label">First Name</label>
+                                                    <input type="text" class="form-control" value="John">
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label class="form-label">Last Name</label>
+                                                    <input type="text" class="form-control" value="Doe">
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label class="form-label">Email</label>
+                                                    <input type="email" class="form-control" value="john@example.com">
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label class="form-label">Phone</label>
+                                                    <input type="tel" class="form-control" value="+1 (555) 123-4567">
+                                                </div>
+                                                <div class="col-12">
+                                                    <label class="form-label">Bio</label>
+                                                    <textarea class="form-control" rows="3">A brief bio...</textarea>
+                                                </div>
+                                                <div class="col-12">
+                                                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Security Settings -->
+                            <div class="tab-pane fade" id="security">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title mb-4">Security Settings</h5>
+                                        <form>
+                                            <div class="mb-4">
+                                                <label class="form-label">Current Password</label>
+                                                <input type="password" class="form-control">
+                                            </div>
+                                            <div class="mb-4">
+                                                <label class="form-label">New Password</label>
+                                                <input type="password" class="form-control">
+                                            </div>
+                                            <div class="mb-4">
+                                                <label class="form-label">Confirm New Password</label>
+                                                <input type="password" class="form-control">
+                                            </div>
+                                            <div class="mb-4">
+                                                <h6 class="mb-3">Two Factor Authentication</h6>
+                                                <div class="form-check form-switch">
+                                                    <input class="form-check-input" type="checkbox" checked>
+                                                    <label class="form-check-label">Enable two-factor authentication</label>
+                                                </div>
+                                            </div>
+                                            <button type="submit" class="btn btn-primary">Update Security Settings</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Notification Settings -->
+                            <div class="tab-pane fade" id="notifications">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title mb-4">Notification Settings</h5>
+                                        <div class="mb-4">
+                                            <h6 class="mb-3">Email Notifications</h6>
+                                            <div class="form-check mb-2">
+                                                <input class="form-check-input" type="checkbox" checked>
+                                                <label class="form-check-label">Account activity</label>
+                                            </div>
+                                            <div class="form-check mb-2">
+                                                <input class="form-check-input" type="checkbox" checked>
+                                                <label class="form-check-label">New transactions</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox">
+                                                <label class="form-check-label">Marketing updates</label>
+                                            </div>
+                                        </div>
+                                        <div class="mb-4">
+                                            <h6 class="mb-3">Push Notifications</h6>
+                                            <div class="form-check mb-2">
+                                                <input class="form-check-input" type="checkbox" checked>
+                                                <label class="form-check-label">Transaction alerts</label>
+                                            </div>
+                                            <div class="form-check mb-2">
+                                                <input class="form-check-input" type="checkbox" checked>
+                                                <label class="form-check-label">Security alerts</label>
+                                            </div>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary">Save Preferences</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Payment Methods -->
+                            <div class="tab-pane fade" id="payment">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between align-items-center mb-4">
+                                            <h5 class="card-title mb-0">Payment Methods</h5>
+                                            <button class="btn btn-primary">
+                                                <i class="bi bi-plus-lg"></i> Add New Card
+                                            </button>
+                                        </div>
+                                        <div class="row g-4">
+                                            <div class="col-md-6">
+                                                <div class="card bg-primary text-white">
+                                                    <div class="card-body p-4">
+                                                        <div class="d-flex justify-content-between mb-3">
+                                                            <div>
+                                                                <p class="mb-0 opacity-75">Card Number</p>
+                                                                <h6 class="mb-0 mt-2">**** **** **** 4242</h6>
+                                                            </div>
+                                                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mastercard-logo.svg/100px-Mastercard-logo.svg.png" alt="Mastercard" height="30">
+                                                        </div>
+                                                        <div class="d-flex justify-content-between mt-4">
+                                                            <div>
+                                                                <p class="mb-0 opacity-75">Card Holder</p>
+                                                                <h6 class="mb-0">John Doe</h6>
+                                                            </div>
+                                                            <div>
+                                                                <p class="mb-0 opacity-75">Expires</p>
+                                                                <h6 class="mb-0">12/24</h6>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="card bg-dark text-white">
+                                                    <div class="card-body p-4">
+                                                        <div class="d-flex justify-content-between mb-3">
+                                                            <div>
+                                                                <p class="mb-0 opacity-75">Card Number</p>
+                                                                <h6 class="mb-0 mt-2">**** **** **** 8888</h6>
+                                                            </div>
+                                                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_Inc._logo.svg/100px-Visa_Inc._logo.svg.png" alt="Visa" height="30">
+                                                        </div>
+                                                        <div class="d-flex justify-content-between mt-4">
+                                                            <div>
+                                                                <p class="mb-0 opacity-75">Card Holder</p>
+                                                                <h6 class="mb-0">John Doe</h6>
+                                                            </div>
+                                                            <div>
+                                                                <p class="mb-0 opacity-75">Expires</p>
+                                                                <h6 class="mb-0">06/25</h6>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Privacy Settings -->
+                            <div class="tab-pane fade" id="privacy">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title mb-4">Privacy Settings</h5>
+                                        <div class="mb-4">
+                                            <h6 class="mb-3">Account Privacy</h6>
+                                            <div class="form-check mb-2">
+                                                <input class="form-check-input" type="checkbox" checked>
+                                                <label class="form-check-label">Make account private</label>
+                                            </div>
+                                            <div class="form-check mb-2">
+                                                <input class="form-check-input" type="checkbox">
+                                                <label class="form-check-label">Show online status</label>
+                                            </div>
+                                        </div>
+                                        <div class="mb-4">
+                                            <h6 class="mb-3">Data Usage</h6>
+                                            <div class="form-check mb-2">
+                                                <input class="form-check-input" type="checkbox" checked>
+                                                <label class="form-check-label">Allow data collection for better service</label>
+                                            </div>
+                                            <div class="form-check mb-2">
+                                                <input class="form-check-input" type="checkbox">
+                                                <label class="form-check-label">Share usage data with partners</label>
+                                            </div>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary">Update Privacy Settings</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/script.js"></script>
+</body>
+</html> 
